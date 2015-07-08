@@ -3,7 +3,18 @@
 This plugin will add modification timestamps to your css and js files, 
 as long as they are embedded with the css() and js() helpers.
 
-## htaccess rules for Apache
+## Installation
+
+To use this plugin, add the cachebuster.php to `site/plugins`. 
+After that you must add rules to your htaccess file or your nginx configuration (see below).
+
+Now you can activate the plugin with following line in your `config.php`.
+
+```
+c::set('cachebuster', true);
+```
+
+### htaccess rules for Apache
 
 To make this plugin work on Apache you must add the following lines to your 
 htaccess file:
@@ -15,7 +26,7 @@ RewriteRule ^(.+)\.(\d+)\.(js|css)$ $1.$3 [L]
 
 Place them directly after the RewriteBase definition.
 
-## Nginx rewrite rules
+### Nginx rewrite rules
 
 For Nginx you can add the following to your virtual host setup:
 
