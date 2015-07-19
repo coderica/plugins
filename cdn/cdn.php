@@ -15,7 +15,6 @@ if(c::get('cdn.assets')) {
   url::$to = function() use($original) {
 
     $url = call($original, func_get_args());
-  
 
     if(!str::startsWith($url, kirby()->urls()->index())) {
       return $url;
