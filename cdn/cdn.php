@@ -20,6 +20,10 @@ if(c::get('cdn.assets')) {
       return $url;
     }
 
+    if(str::contains($url, '/panel/assets')) {
+      return $url;
+    }
+    
     $url = preg_replace_callback('!.*?\/assets\/(.*)$!', function($match) {
       return c::get('cdn.assets') . '/' . $match[1];
     }, $url);
