@@ -37,7 +37,7 @@ $kirby->options['js.handler'] = function($src, $async = false) use($jsHandler, $
 
   if(file_exists($file)) {
     $mod = f::modified($file);
-    $url = dirname($src) . '/' . f::name($src) . '.' . $mod . '.js';
+    $src = dirname($src) . '/' . f::name($src) . '.' . $mod . '.js';
   }
 
   return call($jsHandler, array($src, $async));
