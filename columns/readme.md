@@ -56,6 +56,9 @@ Add the following rules to your CSS to enable the column layout:
 }
 .column {
   display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   vertical-align: top;
   padding-right: 2rem;
 }
